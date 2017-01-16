@@ -1,7 +1,10 @@
-#### Promise based express-mongoose configurable server-side paginator
+## Promise based express-mongoose configurable server-side paginator
 
 ---
 
+<img src="https://s-media-cache-ak0.pinimg.com/736x/e6/e7/12/e6e7122608bc277334281d9aac4a8ce1.jpg" alt="Pidgeot" title="Pidgeot" />
+
+---
 
 ```js
 /**
