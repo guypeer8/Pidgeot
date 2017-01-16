@@ -81,8 +81,8 @@ app.listen(8000);
 ```js
 {
     model  :  // mongoose model (required),
-    page   :  // route path (default 1),
-    path   :  // what page to paginate to (default '/'),
+    path   :  // route path (default '/'),
+    page   :  // what page to paginate to (default 1),
     query  :  // db query to filter records by (default {}),
     factor :  // how many records should be shown on a page (default 50),
     sort   :  // tell mongoose how to sort the returned records (default null),
