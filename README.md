@@ -6,10 +6,12 @@
 /**
  * song_model.js
  **/
+ 
 // create mongoose schema & model
 const mongoose = require('mongoose');
+const {Schema} = mongoose;
 
-const songSchema = new mongoose.Schema({
+const songSchema = new Schema({
 	name: String,
 	artist: String,
 	duration: Number
@@ -24,6 +26,7 @@ module.exports = mongoose.model('Song', songSchema);
 /**
  * app.js
  */
+ 
 const app = require('express')();
 const Song = require('./song_model');
 const Pidgeot = require('./index');
@@ -97,6 +100,7 @@ app.listen(8000);
 /**
  * app.js
  */
+ 
 const app = require('express')();
 const nunjucks = require('nunjucks');
 const Song = require('./song_model');
