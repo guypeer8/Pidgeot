@@ -199,5 +199,11 @@ app.listen(8000);
 {% endif %}
 ```
 ---
+###Install on npm:
+```bash
+npm install pidgeot --save
+```
+[View on npm](https://www.npmjs.com/package/pidgeot)
+---
 
 <img src="https://s-media-cache-ak0.pinimg.com/736x/e6/e7/12/e6e7122608bc277334281d9aac4a8ce1.jpg" alt="Pidgeot" title="Pidgeot" />
