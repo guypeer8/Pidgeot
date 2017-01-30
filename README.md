@@ -29,7 +29,7 @@ module.exports = mongoose.model('Song', songSchema);
  
 const app = require('express')();
 const Song = require('./song_model');
-const Pidgeot = require('./index');
+const Pidgeot = require('pidgeot');
 
 app.get('/', (req, res) => {
     // initialize paginator instance
@@ -104,7 +104,7 @@ app.listen(8000);
 const app = require('express')();
 const nunjucks = require('nunjucks');
 const Song = require('./song_model');
-const Pidgeot = require('./index');
+const Pidgeot = require('pidgeot');
 
 // config nunjucks
 nunjucks.configure('views', {

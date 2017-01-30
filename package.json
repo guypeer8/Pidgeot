@@ -1,0 +1,24 @@
+{
+  "name": "pidgeot",
+  "version": "1.0.1",
+  "description": "Promise based mongoose configurable server-side paginator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guypeer8/Pidgeot.git"
+  },
+  "keywords": [
+    "pagintation",
+    "paginate",
+    "paging"
+  ],
+  "author": "Guy Peer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guypeer8/Pidgeot/issues"
+  },
+  "homepage": "https://github.com/guypeer8/Pidgeot#readme"
+}
