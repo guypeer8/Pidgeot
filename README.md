@@ -28,8 +28,8 @@ module.exports = mongoose.model('Song', songSchema);
  */
  
 const app = require('express')();
-const Song = require('./song_model');
 const Pidgeot = require('pidgeot');
+const Song = require('./song_model');
 
 app.get('/', (req, res) => {
     // initialize paginator instance
@@ -103,8 +103,8 @@ app.listen(8000);
  
 const app = require('express')();
 const nunjucks = require('nunjucks');
-const Song = require('./song_model');
 const Pidgeot = require('pidgeot');
+const Song = require('./song_model');
 
 // config nunjucks
 nunjucks.configure('views', {
@@ -198,6 +198,12 @@ app.listen(8000);
 </nav>
 {% endif %}
 ```
+---
+###Install on npm:
+```bash
+npm install pidgeot --save
+```
+[View on npm](https://www.npmjs.com/package/pidgeot)
 ---
 
 <img src="https://s-media-cache-ak0.pinimg.com/736x/e6/e7/12/e6e7122608bc277334281d9aac4a8ce1.jpg" alt="Pidgeot" title="Pidgeot" />
