@@ -7,19 +7,21 @@
  * @param sort {String}
  * @param fields {Object}
  */
-function Pidgeot({model, path='/', page=1, query={}, factor=50, sort=null, fields={}}) {
+function Pidgeot({model, path='/', page=1, query={}, factor=50, limit, sort=null, select='', lean=false, fields={}}) {
     if(!model) {
         throw new Error('A mongoose model must be passed.');
     }
     if(!(this instanceof Pidgeot)) {
-        return new Pidgeot({model, path, page, query, factor, sort, fields});
+        return new Pidgeot({model, path, page, query, factor, limit, select, lean, sort, fields});
     }
     this.model = model;
     this.path = path;
     this.page = page;
     this.query = query;
-    this.factor = factor;
+    this.factor = limit || factor;
     this.sort = sort;
+    this.select = select;
+    this.lean = lean;
     this.fields = fields;
 }
 
@@ -49,16 +51,21 @@ Pidgeot.prototype.paginate = function() {
             const prev_page = `${this.path}?page=${prev}${queryParams}`;
             const next_page = `${this.path}?page=${next}${queryParams}`;
 
-            const dbQuery = this.model.find(this.query);
+            let dbQuery = this.model.find(this.query);
             if(this.sort) {
                 dbQuery.sort(this.sort);
             }
             if(skip_rate > 0) {
                 dbQuery.skip(skip_rate);
             }
+            dbQuery.limit(this.factor);
+            if(this.select) {
+                dbQuery.select(this.select);
+            }
+            if(this.lean) {
+                dbQuery.lean();
+            }
             dbQuery
-                .limit(this.factor)
-                .lean()
                 .exec((err, records) => {
                     if(err) {
                         return reject(err);

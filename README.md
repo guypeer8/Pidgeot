@@ -42,7 +42,8 @@ app.get('/', (req, res) => {
 				$lte: 50
 			}
 		}, 
-		factor: 20, 
+		limit: 20, 
+		select: '-_id',
 		sort: 'name', 
 		fields: {
 			collection: 'songs'
@@ -83,13 +84,15 @@ app.listen(8000);
 
 ```js
 {
-    model  :  // mongoose model (required),
-    path   :  // route path (default '/'),
-    page   :  // what page to paginate to (default 1),
-    query  :  // db query to filter records by (default {}),
-    factor :  // how many records should be shown on a page (default 50),
-    sort   :  // tell mongoose how to sort the returned records (default null),
-    fields :  // external query params to include (default {})
+    model  :  // Mongoose model (required),
+    path   :  // Route path (default '/'),
+    page   :  // What page to paginate to (default 1),
+    query  :  // DB query to filter records by (default {}),
+    limit  :  // How many records should be shown on a page (default 50),
+    select :  // Which model fields to select,
+    sort   :  // How to sort the returned records (default null),
+    lean   :  // Should records data return as lean array,
+    fields :  // External query params to include (default {})
 }
 ```
 
@@ -126,7 +129,8 @@ app.get('/', (req, res) => {
 				$lte: 50
 			}
 		},
-		factor: 20,
+		limit: 20,
+		select: '-_id',
 		sort: 'name',
 		fields: {
 			collection: 'songs'
